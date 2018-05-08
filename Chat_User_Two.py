@@ -92,3 +92,4 @@ if __name__ == '__main__':
     tthread.join()
     sock_tcp.close()
     exit()
+ # Por Paulo Roberto Júnior
