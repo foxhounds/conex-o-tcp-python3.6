@@ -103,3 +103,4 @@ if __name__ == '__main__':
     processo.join()
     sock_tcp.close()
     exit()
+    # Por Paulo Roberto Júnior...
