@@ -23,7 +23,7 @@ class Envia_MSG:
 def aguarda(sock_tcp, tell, host='localhost', porta=666):
     destino = (host, porta)
     sock_tcp.connect(destino)# Se conecta paralelamento
-    print(" ┌Conectado com usuário", destino[0])
+    print("\n ┌Conectado com usuário", destino[0])
     print(" └──Dê um Olá \(^v^)/ \n")
 
     while tell.loop_true():# True... pela class def
@@ -53,14 +53,21 @@ def interface(msg):
     # Exibe Menssage formatada.
     print('                        ',mesg)
 
+# Define Nome de usuário
+def Name_User():
+    print(' ┌Inserir nome de usuário──♥')
+    name_user = input(' └──> ')
+    return name_user # Retorna o nome
+
 # Caso não seja execultado como um modulo
 if __name__ == '__main__':
     print('')
     print("""\
-        Bonsoir, Friend!
-
-            Terminal-Chat 1.0.0
-
+    ┌───────────────────────────────┐
+    │   Bonsoir, Friend!            │
+    │                               │
+    │         Terminal-Chat 1.0.0   │
+    └───────────────────────────────┘
     """)
     time.sleep(2)
     print(' ┌Endereço IP do outro usuário──♥')
@@ -70,11 +77,7 @@ if __name__ == '__main__':
         while host == '':
             host = input(' └──> ')
 
-    # Define nome do usuário...
-    print(' ┌Inserir nome do seu usuário──♥')
-    name_user = input(' └──> ')
-    nome_outro = name_user
-    print('')
+    nome_outro = Name_User()
 
     sock_tcp = socket(AF_INET, SOCK_STREAM) # Socket de conexão
     tell = Envia_MSG() # tell = Class Envia_MSG
@@ -92,4 +95,9 @@ if __name__ == '__main__':
     tthread.join()
     sock_tcp.close()
     exit()
- # Por Paulo Roberto Júnior
+
+'''
+    modificado por Paulo Roberto Júnior
+    Link original
+    https://digitandocodigos.wordpress.com/2011/03/28/sistema-de-chat-em-python-3-2/
+'''
