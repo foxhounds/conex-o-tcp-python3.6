@@ -29,7 +29,8 @@ def aguarda(sock_tcp, tell, host='', porta=666,):
     while True:# True... pela class def
         verifi, cliente=sock_tcp.accept()
         print(" ┌Usuário com IP", cliente[0], "está conectado.")
-        print(" └──Dê um Olá \(^v^)/ \n")
+        print(" └──Dê um Olá \(^v^)/ ")
+        print('')
         # Envia_MSG.verifi = socket(AF_INET, SOCK_STREAM)
         tell.verifi=verifi
 
@@ -46,8 +47,7 @@ def interface(msg):
     name = ''
     cont = 0
     for i in msg: # salva primeira variável mesg
-        if i == '+':
-            break
+        if i == '+': break
         else:
             mesg = mesg + i
             cont += 1 # Contador para Name
@@ -66,10 +66,11 @@ if __name__ == '__main__':
     # Primeira menssagem a ser exibida!
     print('')
     print("""\
-        Bonsoir, Friend!
-
-            Terminal-Chat 1.0.0
-
+    ┌───────────────────────────────┐
+    │   Bonsoir, Friend!            │
+    │                               │
+    │         Terminal-Chat 1.0.0   │
+    └───────────────────────────────┘
     """)
     time.sleep(2)
     print(' ┌Seu endereço IP──♥')
@@ -103,4 +104,9 @@ if __name__ == '__main__':
     processo.join()
     sock_tcp.close()
     exit()
-    # Por Paulo Roberto Júnior...
+
+'''
+    modificado por Paulo Roberto Júnior
+    Link original
+    https://digitandocodigos.wordpress.com/2011/03/28/sistema-de-chat-em-python-3-2/
+'''
